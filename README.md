@@ -14,6 +14,9 @@
 
 <br />
 ###  - 문제의 정의
+
+<br />
+
 Kaggle에 있는 문제 소개 중
 
 "Why are our best and most experienced employees leaving prematurely?" 
@@ -32,9 +35,11 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 또한 **새로운data**가 들어왔을 때, 어떤 category에 속하는 가이다.
 
 <br />
+
 하지만 predict which valuable employees will leave next에서 precidt는 hr에서 단순히 **예측**이 아닌, 미리 알아서 이직을 **예방**등과 같은 조치를 취하겠다는 의미이다.
 
 따라서 이직한 인원들의 특징을 파악해서 이와 **현시점에서 이와 유사한 사람**들이 누가있는지 파악해야 한다.
+
 <br />
 <br />
 
@@ -60,6 +65,9 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 <br />
 
 ### - 문제의 정의 및 관련 hr이론을 고려한 앞으로의 전개과정
+
+<br />
+
 1. 인적자원계획을 설정하기 위해서 현재 **기업 수요인원과 공급인원**을 살펴본다.
 2. 적정이직률과 GE-9block에 의하면 모든 인원이 나가지 않는 것이 좋은 것이 아니다. 때로는 조직에 해가 되는 인원은 조직의 순환을 위해 도움이 된다. 이러한 것을 살펴보기 위해 **GE-9block**으로 인원들을 **segmentaion**해보도록 하겠다.
 3. GE-9block으로 나눈 후에는 **이직이 많이 발생하는 집단의 특징**을 살펴본다.
@@ -70,6 +78,9 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 <br />
 
 # 1. Data의 분포
+
+<br />
+
 ### 데이터 설명
 이 데이터는 총 14999의 행과 10개의 열을 가지고 있다. 열의 의미는 아래와 같다.
 
@@ -83,7 +94,11 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 - Departments (column sales) : 속하는 부서(카테고리)
 - Salary : 연봉을 의미하여 high,low, medium으로 카테고리 값이다.
 - Whether the employee has left : 퇴사여부를 의미하며 0,1로 이루어진 카테고리 값이다.
+
 ### 데이터의 분포의 특징 살펴보기
+
+<br />
+
 ![3](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/3.png?raw=true)
 - 데이터 분포를 살펴보면 number_project의 수는 4개가 최고점을 이루고 있으며,
 - 회사 근속년수는 3년이 최고점을 이루고 있으며, 1년차는 없는 것으로 봐서 저번년도는 **채용이 없던 것**으로 확인할 수 있다.
@@ -97,6 +112,9 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 퇴사의 추세가 이대로 유지된다면 기업의 위기를 초래할 수도 있다고 본다.
 
 ### feature들 간 상관관계가 있는지 여부
+
+<br />
+
 ![4](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/4.png?raw=true)
 상관관계를 살펴본 결과,
 - 프로젝트의 개수, 최신 평가의 결과, 월 평균 근로시간은 서로 양의 관계가 나타나 있는 것으로 나타났으며,
@@ -105,6 +123,9 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 강한상관관계가 아닌 약한 상관관계가 나타나므로, **데이터의 분포를 더 자세히 확인**하기 위해서 이하에서는 **퇴사인원과 잔류인원**을 구분하여 pairplot을 그려보도록 하겠다.
 
 ### 퇴사인원과 잔류인원의 pairplot
+
+<br />
+
 ![5](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/5.png?raw=true)
 퇴사인원의 특징을 설명하려면, 특정그룹으로 묶어낸 다음에 이들의 특징을 살펴보면 될 것이다.
 
@@ -118,6 +139,9 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 <br />
 
 # 2. our best and most experienced employees에 대한 정의 - GE 9 block
+
+<br />
+
 GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 X축을 만족도, Y축을 최신평과로 두면 GE-9block의 관점에서 data를 해석할 수 있다.
 ![2](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/2.png?raw=true)
 ![6](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/6.png?raw=true)
@@ -132,6 +156,9 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 **7번의 경우**에는 **현재 조직이 처한 상황**에 따라 가치가 달라질 수 인원이다.(1목차에서 살펴본 인적자원 계획에 의하면 작년채용은 없었고 대거 이직을 했으므로 7번의 경우는 중요한 인원들이다.)
 
 ### 이직자들의 cluster별 묶어주기
+
+<br />
+
 ![8](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/8.png?raw=true)
 - 각 cluster별의 경계값을 찾아주기 위해 위와 같이 시각화를 해주었다. 
 - cluster 기법인 kmeans 등을 쓰지 않는 이유는 **해당 범위외의 data가 묶이지 않기** 위해서이다.
@@ -141,6 +168,9 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 <br />
 
 # 3. Left reason(3_cluster) - PCA분석 및 graph
+
+<br />
+
 ### PCA 분석
 ![9](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/9.png?raw=true)
 보통의 주성분이 실수형으로만 이루어진 경우에는 PCA 주성분에 이름(naming)을 붙인 뒤에 의미를 해석한다.
@@ -156,11 +186,15 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 
 ### PCA biplot 그리기
 
+<br />
+
 ![12](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/12.png?raw=true)
 **number_project, average_montly_hours,time_spend_company**등이 cluster_1, cluster_3에서 크게 그려지고 있으나, cluster_2에서는 
 **승진여부**가 크게 그려지고 있다. 즉 cluster_2에서는 **number_project, average_montly_hours,time_spend_company**등이 유사한 집단인 것을 알 수 있다. 이하에서는 클러스터 별 구분이 되는 요소인 number_project, average_montly_hours,time_spend_company에 대해 **시각화** 해보도록 하겠다.
 
 ### 각 cluster 별 원인 진단(위에서 추론한 것을 시각해보기)
+
+<br />
 
 ![15](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/15.png?raw=true)
 ![16](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/16.png?raw=true)
@@ -196,14 +230,20 @@ cluster_3의 문제는 업무량 조절 등이 필요한 상태이다.
 
 # 4. Predict which valuable employees will leave next - cosine similarity
 
+<br />
+
 ### 유사도 구해주기(cluster_1의 경우를 예로 들어서)
 - cluster_1의 경우로 이동가능한 인원들은 **9-block에서 6,8,9**에 속한 인원들이다.
 - 또한 해당 유사도를 더 세분화해주기 위해서 **sales와 salary**별로 구분해서 구해주도록 하겠다.
+
+<br />
 
 ### 코사인 유사도로 해준 이유는?
 - 유사도를 구하는 방식은 유클리디안 점수기반 알고리즘, 코사인 기반, 자카드 계수, 피어슨 상관계수 등 다양한 종류가 있다.
 - 하지만 코사인 유사도로 해준 이유는 **방향성**으로 유사도를 측정하기 때문이다.
 - 즉 프로젝트의 개수, 월 평균 근로시간, 근속년수 등이 퇴직자와 비슷한 비율로 나타난다면 이 인원이 퇴직할 가능성이 높다고 생각하였다.
+
+<br />
 
 ### 코사인 유사도가 85% 이상인 인원의 분포
 ![19](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/19.png?raw=true)
@@ -214,6 +254,9 @@ cluster_3의 문제는 업무량 조절 등이 필요한 상태이다.
 <br />
 
 # 5. 결론 및 추가 논의사항
+
+<br />
+
 ### 결론
 
 - 데이터를 **countplot**등으로 전반적인 상황을 살펴본 뒤에,
@@ -223,6 +266,8 @@ cluster_3의 문제는 업무량 조절 등이 필요한 상태이다.
 - 그룹핑 시킬때는 GE-9block을 이용해서 구분해주었으며 cluster내의 특징으로 각 **클러스터별 문제점**을 PCA 등으로 진단 및 해결책을 제시하였다.
 
 - 어떤 인원이 퇴사할지에 대해서는 classification이 적용가능한 머신러닝(딥러닝) 이론을 적용하기보다는 **cosine 유사도**로 찾아내었다.
+
+<br />
 
 ### 추가 논의사항
 
