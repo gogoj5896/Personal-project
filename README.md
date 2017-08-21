@@ -185,6 +185,7 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 ### PCA 분석
 ![9](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/9.png?raw=true)
 
+
 보통의 주성분이 실수형으로만 이루어진 경우에는 PCA 주성분에 이름(naming)을 붙인 뒤에 의미를 해석한다.
 
 하지만 이 경우에는 연속형 자료가 아닌 카테고리 및 정수 값이 주성분에 크게 나온것을 알 수가 있다.(실수형 보다 **데이터의 분산정도**가 커지기 때문에) 따라서 주성분을 naming하기 보다는 clsuter별 **원성분이 주성분에 차지하는 비중**으로 cluster간 비교를 하도록 하겠다.
