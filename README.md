@@ -182,6 +182,8 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 
 ### PCA 분석
 ![9](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/9.png?raw=true)
+![10](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/10.png?raw=true)
+![11](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/11.png?raw=true)
 
 
 보통의 주성분이 실수형으로만 이루어진 경우에는 PCA 주성분에 이름(naming)을 붙인 뒤에 의미를 해석한다.
@@ -200,6 +202,9 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 ### PCA biplot 그리기
 
 ![12](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/12.png?raw=true)
+![13](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/13.png?raw=true)
+![14](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/14.png?raw=true)
+
 
 **number_project, average_montly_hours,time_spend_company**등이 cluster_1, cluster_3에서 크게 그려지고 있으나, cluster_2에서는 
 **승진여부**가 크게 그려지고 있다. 즉 cluster_2에서는 **number_project, average_montly_hours,time_spend_company**등이 유사한 집단인 것을 알 수 있다. 이하에서는 클러스터 별 구분이 되는 요소인 number_project, average_montly_hours,time_spend_company에 대해 **시각화** 해보도록 하겠다.
