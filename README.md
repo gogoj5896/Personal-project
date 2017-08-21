@@ -207,7 +207,11 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 
 
 **number_project, average_montly_hours,time_spend_company**등이 cluster_1, cluster_3에서 크게 그려지고 있으나, cluster_2에서는 
-**승진여부**가 크게 그려지고 있다. 즉 cluster_2에서는 **number_project, average_montly_hours,time_spend_company**등이 유사한 집단인 것을 알 수 있다. 이하에서는 클러스터 별 구분이 되는 요소인 number_project, average_montly_hours,time_spend_company에 대해 **시각화** 해보도록 하겠다.
+**승진여부**가 크게 그려지고 있다. 
+
+즉 cluster_2에서는 **number_project, average_montly_hours,time_spend_company**등이 유사한 집단인 것을 알 수 있다.
+
+이하에서는 클러스터 별 구분이 되는 요소인 number_project, average_montly_hours,time_spend_company에 대해 **시각화** 해보도록 하겠다.
 
 <br />
 
