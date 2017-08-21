@@ -27,9 +27,9 @@ Kaggle에 있는 문제 소개 중
 
 - 두번째, predict가 핵심 키워드가 아니라 valuable employees will **leave next**이 핵심 키워드이다.
 
-predict를 핵심 키워드로 생각해서 **classification**으로 접근하게 되면, accuracy가 높더라도 **현재 인원**에 대한 분류이다. 
+predict를 핵심 키워드로 생각해서 **classification**으로 접근하게 되면, accuracy가 높더라도 **현재인원**에 대한 분류이다. 
 
-또한 **새로운 data**가 들어왔을 때, 어떤 category에 속하는 가이다.
+또한 **새로운data**가 들어왔을 때, 어떤 category에 속하는 가이다.
 
 <br />
 하지만 predict which valuable employees will leave next에서 precidt는 hr에서 단순히 **예측**이 아닌, 미리 알아서 이직을 **예방**등과 같은 조치를 취하겠다는 의미이다.
