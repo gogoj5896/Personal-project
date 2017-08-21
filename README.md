@@ -217,9 +217,9 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 
 ### 각 cluster 별 원인 진단(위에서 추론한 것을 시각해보기)
 
-![15](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/15.png?raw=true)
-![16](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/16.png?raw=true)
-![17](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/17.png?raw=true)
+![20](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/20.png?raw=true)
+![21](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/21.png?raw=true)
+![22](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/22.png?raw=true)
 ![18](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/18.png?raw=true)
 
 **radar chart**와 **distplot**등을 종합해보면, 
