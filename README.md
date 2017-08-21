@@ -50,11 +50,13 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 <br />
 
 - **적정이직률**은 기업이 부담해야 하는 이직비용과 인력보유비용의 합이 최소가 되는, 즉 **이직비용이 최저**가 되는 곳이 존재한다
+
 ![1.png](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/1.png?raw=true)
 
 <br />
 
-- **GE-9block**은 GE의 CEO였던 Jack Welch가 **발전가능성(동기부여-x축)**, **결과(성과-y축)**를 사용하여 9가지 block을 구성하고 **상위 10%**는 핵심인재로서 지속적인 **육성**, **하위 10%**는 **방출**하는 인력관리 방법이다.
+- **GE-9block**은 GE의 CEO였던 Jack Welch가 **발전가능성(동기부여-x축) 결과(성과-y축)**를 사용하여 9가지 block을 구성하고 **상위 10%**는 핵심인재로서 지속적인 **육성, 하위 10%는 방출**하는 인력관리 방법이다.
+
 ![2](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/2.png?raw=true)
 
 - 위 그림에서 9,8,6 등과 같이 green 영역에 속한 인재는 **육성**을 하였으며, 7,5,3과 같은 인재는 **유지**를, 4,2과 같은 인재는 **주의**를, 1번과 같은 인재는 **방출**을 하였다.
@@ -66,8 +68,6 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 <br />
 
 ### - 문제의 정의 및 관련 hr이론을 고려한 앞으로의 전개과정
-
-<br />
 
 1. 인적자원계획을 설정하기 위해서 현재 **기업 수요인원과 공급인원**을 살펴본다.
 2. 적정이직률과 GE-9block에 의하면 모든 인원이 나가지 않는 것이 좋은 것이 아니다. 때로는 조직에 해가 되는 인원은 조직의 순환을 위해 도움이 된다. 이러한 것을 살펴보기 위해 **GE-9block**으로 인원들을 **segmentaion**해보도록 하겠다.
@@ -96,11 +96,12 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 - Salary : 연봉을 의미하여 high,low, medium으로 카테고리 값이다.
 - Whether the employee has left : 퇴사여부를 의미하며 0,1로 이루어진 카테고리 값이다.
 
-### 데이터의 분포의 특징 살펴보기
-
 <br />
 
+### 데이터의 분포의 특징 살펴보기
+
 ![3](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/3.png?raw=true)
+
 - 데이터 분포를 살펴보면 number_project의 수는 4개가 최고점을 이루고 있으며,
 - 회사 근속년수는 3년이 최고점을 이루고 있으며, 1년차는 없는 것으로 봐서 저번년도는 **채용이 없던 것**으로 확인할 수 있다.
 - 이직에 대한 인원이 **많은 비중**을 차지고 있었다.(계산 결과 23%)
@@ -112,22 +113,25 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 또한, **인적자원계획** 입장에서 보면 인력의 공급은 작년에 1명도 있지 않았지만 **올해는 23% 인원**이 나갔기에 엄청난 **공급의 부족**이 예상되며
 퇴사의 추세가 이대로 유지된다면 기업의 위기를 초래할 수도 있다고 본다.
 
-### feature들 간 상관관계가 있는지 여부
-
 <br />
 
+### feature들 간 상관관계가 있는지 여부
+
+
 ![4](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/4.png?raw=true)
+
 상관관계를 살펴본 결과,
 - 프로젝트의 개수, 최신 평가의 결과, 월 평균 근로시간은 서로 양의 관계가 나타나 있는 것으로 나타났으며,
 - 이직과 만족도는 음의 상관관계 있는 것으로 나타났다.
 
 강한상관관계가 아닌 약한 상관관계가 나타나므로, **데이터의 분포를 더 자세히 확인**하기 위해서 이하에서는 **퇴사인원과 잔류인원**을 구분하여 pairplot을 그려보도록 하겠다.
 
-### 퇴사인원과 잔류인원의 pairplot
-
 <br />
 
+### 퇴사인원과 잔류인원의 pairplot
+
 ![5](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/5.png?raw=true)
+
 퇴사인원의 특징을 설명하려면, 특정그룹으로 묶어낸 다음에 이들의 특징을 살펴보면 될 것이다.
 
 - 위의 pairplot을 보면 **최신평가**와 **월 평균근로시간**은 **두 그룹의 분포**가 나타나며, 
@@ -144,10 +148,14 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 <br />
 
 GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 X축을 만족도, Y축을 최신평과로 두면 GE-9block의 관점에서 data를 해석할 수 있다.
+
 ![2](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/2.png?raw=true)
 ![6](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/6.png?raw=true)
+
 - 모든 인원의(잔류인원+퇴사인원) 경우 9-block에 의하면 2,3,4,5,8,9의 인원들이 많이 나타났다.
+
 ![7](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/7.png?raw=true)
+
 - 퇴사인원의 경우 9-block에 의하면 1,7,9의 인원들이 많이 나타났다.
 
 즉 우리가 찾는 **our best and most experienced employees는 9번의 인원**에 해당함을 알 수가 있다.
@@ -156,11 +164,13 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 
 **7번의 경우**에는 **현재 조직이 처한 상황**에 따라 가치가 달라질 수 인원이다.(1목차에서 살펴본 인적자원 계획에 의하면 작년채용은 없었고 대거 이직을 했으므로 7번의 경우는 중요한 인원들이다.)
 
-### 이직자들의 cluster별 묶어주기
-
 <br />
 
+### 이직자들의 cluster별 묶어주기
+
+
 ![8](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/8.png?raw=true)
+
 - 각 cluster별의 경계값을 찾아주기 위해 위와 같이 시각화를 해주었다. 
 - cluster 기법인 kmeans 등을 쓰지 않는 이유는 **해당 범위외의 data가 묶이지 않기** 위해서이다.
 
@@ -174,6 +184,7 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 
 ### PCA 분석
 ![9](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/9.png?raw=true)
+
 보통의 주성분이 실수형으로만 이루어진 경우에는 PCA 주성분에 이름(naming)을 붙인 뒤에 의미를 해석한다.
 
 하지만 이 경우에는 연속형 자료가 아닌 카테고리 및 정수 값이 주성분에 크게 나온것을 알 수가 있다.(실수형 보다 **데이터의 분산정도**가 커지기 때문에) 따라서 주성분을 naming하기 보다는 clsuter별 **원성분이 주성분에 차지하는 비중**으로 cluster간 비교를 하도록 하겠다.
@@ -185,17 +196,18 @@ GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 
 **cluster1과 cluster3**의 세번째 주성분에서는 **number_project, average_montly_hours,time_spend_company**순으로 차지하는 비중이 컸으나,
 **cluster 2**에서는 **승진의 여부**가 가장 큰 차지를 하고 있었다. 좀 더 구체적으로 살펴보기 위해서 PCA biplot을 그려보았다.
 
-### PCA biplot 그리기
-
 <br />
 
+### PCA biplot 그리기
+
 ![12](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/12.png?raw=true)
+
 **number_project, average_montly_hours,time_spend_company**등이 cluster_1, cluster_3에서 크게 그려지고 있으나, cluster_2에서는 
 **승진여부**가 크게 그려지고 있다. 즉 cluster_2에서는 **number_project, average_montly_hours,time_spend_company**등이 유사한 집단인 것을 알 수 있다. 이하에서는 클러스터 별 구분이 되는 요소인 number_project, average_montly_hours,time_spend_company에 대해 **시각화** 해보도록 하겠다.
 
-### 각 cluster 별 원인 진단(위에서 추론한 것을 시각해보기)
-
 <br />
+
+### 각 cluster 별 원인 진단(위에서 추론한 것을 시각해보기)
 
 ![15](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/15.png?raw=true)
 ![16](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/16.png?raw=true)
@@ -223,7 +235,7 @@ cluster_1의 문제를 예방하려면 직급을 세분화하거나 한 단계 �
 cluster_2의 문제는 굳이 해결할 필요가 없으나(조직의 환기를 위해서) 새로운 인력이 필요하다면, 조기 적응프로그램 도입 및 직무 순환 프로그램의 도입이 가능하다.
 cluster_3의 문제는 업무량 조절 등이 필요한 상태이다.
 
-이와 같은 **해결책**이 있다고 하더라도 **어떠한 인원들을 타케팅(targeting)**해서 도입해야되는지 알아보도록 하겠다.
+이와 같은 **해결책**이 있다고 하더라도 **어떠한 인원들을 타케팅(targeting)** 해서 도입해야되는지 알아보도록 하겠다.
 
 <br />
 <br />
@@ -248,6 +260,7 @@ cluster_3의 문제는 업무량 조절 등이 필요한 상태이다.
 
 ### 코사인 유사도가 85% 이상인 인원의 분포
 ![19](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/19.png?raw=true)
+
 즉 위와 같이 해당 클러스터와 유사도를 기준으로 인원을 뽑아낸다음에 이들을 타케팅해서 이직 방지의 program을 운영할 수 있다.
 
 <br />
