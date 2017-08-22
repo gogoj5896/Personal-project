@@ -148,11 +148,11 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 GE-9block에서 x축은 발전가능성 y축은 현재성과를 의미하므로 X축을 만족도, Y축을 최신평과로 두면 GE-9block의 관점에서 data를 해석할 수 있다.
 
 ![2](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/2.png?raw=true)
-![6](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/6.png?raw=true)
+![6](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/30.png?raw=true)
 
 - 모든 인원의(잔류인원+퇴사인원) 경우 9-block에 의하면 2,3,4,5,8,9의 인원들이 많이 나타났다.
 
-![7](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/7.png?raw=true)
+![7](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/31.png?raw=true)
 
 - 퇴사인원의 경우 9-block에 의하면 1,7,9의 인원들이 많이 나타났다.
 
