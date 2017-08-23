@@ -53,7 +53,7 @@ predict를 핵심 키워드로 생각해서 **classification**으로 접근하�
 
 <br />
 
-- **GE-9block**은 GE의 CEO였던 Jack Welch가 **발전가능성**(동기부여-x축) **결과**(성과-y축)를 사용하여 9가지 block을 구성하고 **상위 10%**는 핵심인재로서 지속적인 **육성, 하위 10%는 방출**하는 인력관리 방법이다.
+- **GE-9block**은 GE의 CEO였던 Jack Welch가 **발전가능성**(동기부여-x축) **결과**(성과-y축)를 사용하여 9가지 block을 구성하고 **상위10%** 는 핵심인재로서 지속적인 **육성, 하위 10%는 방출**하는 인력관리 방법이다.
 
 ![2](https://github.com/gogoj5896/Personal-project/blob/master/read_me_image/2.png?raw=true)
 
